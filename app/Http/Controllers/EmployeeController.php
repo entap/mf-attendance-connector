@@ -40,36 +40,35 @@ class EmployeeController extends Controller
         return Employee::orderBy('id')->get();
     }
 
-    public function view($employeeId)
+    public function view(string $employeeId)
     {
-        $employee = Employee::find($employeeId);
-        $employee or abort(404);
+        $employee = Employee::where('id', $employeeId)->orWhere('name', urldecode($employeeId))->firstOrFail();
         return $employee;
     }
 
-    public function attendance(Request $request, int $employeeId)
+    public function attendance(Request $request, string $employeeId)
     {
-        Employee::find($employeeId) or abort(404);
+        $employee = Employee::where('id', $employeeId)->orWhere('name', urldecode($employeeId))->firstOrFail();
 
         $query = AttendanceRecord::query();
-        $query->where('employee_id', $employeeId);
+        $query->where('employee_id', $employee->id);
         $query->whereBetween('date', $this->period($request));
         return $query->get();
     }
 
-    public function calendar(Request $request, int $employeeId)
+    public function calendar(Request $request, string $employeeId)
     {
-        Employee::find($employeeId) or abort(404);
+        $employee = Employee::where('id', $employeeId)->orWhere('name', urldecode($employeeId))->firstOrFail();
 
         // 出勤簿から取得(標準情報)
         $query = AttendanceRecord::query();
-        $query->where('employee_id', $employeeId);
+        $query->where('employee_id', $employee->id);
         $query->whereBetween('date', $this->period($request));
         $records = $query->get();
 
         // 申請情報から取得
         $query = AttendanceRequest::query();
-        $query->where('employee_id', $employeeId);
+        $query->where('employee_id', $employee->id);
         $query->whereBetween('date', $this->period($request));
         $requests = array_column($query->get()->all(), null, "date");
 
@@ -93,11 +92,10 @@ class EmployeeController extends Controller
         return $calendar;
     }
 
-    public function timeRecorderEvent(int $employeeId, string $event)
+    public function timeRecorderEvent(string $employeeId, string $event)
     {
         // 従業員を取得
-        $employee = Employee::find($employeeId);
-        $employee or abort(404);
+        $employee = Employee::where('id', $employeeId)->orWhere('name', urldecode($employeeId))->firstOrFail();
 
         // イベントの名前をチェック
         if (!in_array($event, ['checkIn', 'checkOut', 'breaktime', 'breaktimeEnd'])) {

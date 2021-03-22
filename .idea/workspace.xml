@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1fdff47a-7f31-4f92-b759-4f4bb4fbbb00" name="デフォルト変更リスト" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deploy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-    </list>
+    <list default="true" id="1fdff47a-7f31-4f92-b759-4f4bb4fbbb00" name="デフォルト変更リスト" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -180,6 +175,12 @@
       <updated>1615003796367</updated>
       <workItem from="1615003798950" duration="2928000" />
       <workItem from="1615522901428" duration="3323000" />
+      <workItem from="1615530835051" duration="9000" />
+      <workItem from="1615805173354" duration="2145000" />
+      <workItem from="1615811849045" duration="13000" />
+      <workItem from="1616033504461" duration="624000" />
+      <workItem from="1616040687349" duration="9000" />
+      <workItem from="1616040976755" duration="23000" />
     </task>
     <servers />
   </component>

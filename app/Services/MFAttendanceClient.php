@@ -305,6 +305,7 @@ class MFAttendanceClient
         $uri = '/admin/workflow_requests/' . $type . '?page=' . $page;
         $uri .= '&filter_form[workflow_type_in][]=WorkflowRequest::AbsenceWorkflowRequest';
         $uri .= '&filter_form[workflow_type_in][]=WorkflowRequest::HolidayWorkWorkflowRequest';
+        $uri .= '&filter_form[workflow_type_in][]=WorkflowRequest::LeaveWorkflowRequest';
         $crawler = $this->request('GET', $uri);
         $table = $crawler->filter('table.attendance-table-contents')->eq(1);
         $table->filter('tr')->each(function ($tr) use (&$data) {

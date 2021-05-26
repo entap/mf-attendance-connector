@@ -74,11 +74,11 @@ php artisan mfac:sync-time-recorder-logs {--pages=1}
 ```json
 {
     "id": 21,
-    "name": "牧村 美冴",
+    "name": "山田 太郎",
     "hire_date": "2019-05-01",
     "retire_date": "2020-04-30",
-    "sur_name": "牧村",
-    "given_name": "美冴",
+    "sur_name": "山田",
+    "given_name": "太郎",
     "is_working": false
 }
 ```
